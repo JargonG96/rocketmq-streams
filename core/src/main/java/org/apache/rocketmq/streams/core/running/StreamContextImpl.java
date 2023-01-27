@@ -123,6 +123,7 @@ public class StreamContextImpl<V> implements StreamContext<V> {
         for (Processor<V> processor : childList) {
 
             try {
+                // todo : 这里无法理解：为何后续还要add进去
                 processor.preProcess(this);
                 processor.process(data.getValue());
             } finally {
